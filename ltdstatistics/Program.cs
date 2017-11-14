@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.IO.StreamWriter;
 
 namespace ltdstatistics
 {
@@ -105,7 +106,7 @@ namespace ltdstatistics
             Boolean time = false, custom = false;
             
             System.IO.StreamReader fileZ = new System.IO.StreamReader(@"log.txt");
-
+            System.IO.StreamReader file = new System.IO.StreamReader(@"log.txt");
             string line, line_davor="";
             string[] allLines = new string[50000];
             int meinCounter = 0;
@@ -114,7 +115,7 @@ namespace ltdstatistics
                 allLines[meinCounter] = line;
                 meinCounter++;
             }
-            System.IO.StreamReader file = new System.IO.StreamReader(@"log.txt");
+            
             while ((line = file.ReadLine()) != null)
             {
                 if (line.Contains("(Practice/Custom)"))
