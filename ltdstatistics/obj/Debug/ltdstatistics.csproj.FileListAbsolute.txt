@@ -1,0 +1,15 @@
+C:\Users\christiana\documents\visual studio 2017\Projects\ltdstatistics\ltdstatistics\obj\Debug\ltdstatistics.csprojResolveAssemblyReference.cache
+C:\Users\christiana\documents\visual studio 2017\Projects\ltdstatistics\ltdstatistics\bin\Debug\ltdstatistics.exe.config
+C:\Users\christiana\documents\visual studio 2017\Projects\ltdstatistics\ltdstatistics\bin\Debug\ltdstatistics.exe
+C:\Users\christiana\documents\visual studio 2017\Projects\ltdstatistics\ltdstatistics\bin\Debug\ltdstatistics.pdb
+C:\Users\christiana\documents\visual studio 2017\Projects\ltdstatistics\ltdstatistics\obj\Debug\ltdstatistics.exe
+C:\Users\christiana\documents\visual studio 2017\Projects\ltdstatistics\ltdstatistics\obj\Debug\ltdstatistics.pdb
+C:\Users\christiana\documents\visual studio 2017\Projects\ltdstatistics\ltdstatistics\obj\Debug\ltdstatistics.csproj.ResolveComReference.cache
+C:\Users\Chris\Desktop\ltdstatistics\ltdstatistics\bin\Debug\ltdstatistics.exe.config
+C:\Users\Chris\Desktop\ltdstatistics\ltdstatistics\bin\Debug\ltdstatistics.exe
+C:\Users\Chris\Desktop\ltdstatistics\ltdstatistics\bin\Debug\ltdstatistics.pdb
+C:\Users\Chris\Desktop\ltdstatistics\ltdstatistics\obj\Debug\ltdstatistics.csprojResolveAssemblyReference.cache
+C:\Users\Chris\Desktop\ltdstatistics\ltdstatistics\obj\Debug\ltdstatistics.csproj.ResolveComReference.cache
+C:\Users\Chris\Desktop\ltdstatistics\ltdstatistics\obj\Debug\ltdstatistics.csproj.CoreCompileInputs.cache
+C:\Users\Chris\Desktop\ltdstatistics\ltdstatistics\obj\Debug\ltdstatistics.exe
+C:\Users\Chris\Desktop\ltdstatistics\ltdstatistics\obj\Debug\ltdstatistics.pdb
