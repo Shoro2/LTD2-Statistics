@@ -20,3 +20,11 @@ C:\Users\christiana\Documents\Visual Studio 2017\Projects\LTD2-Statistics\ltdsta
 C:\Users\christiana\Documents\Visual Studio 2017\Projects\LTD2-Statistics\ltdstatistics\obj\Debug\ltdstatistics.csproj.ResolveComReference.cache
 C:\Users\christiana\Documents\Visual Studio 2017\Projects\LTD2-Statistics\ltdstatistics\obj\Debug\ltdstatistics.exe
 C:\Users\christiana\Documents\Visual Studio 2017\Projects\LTD2-Statistics\ltdstatistics\obj\Debug\ltdstatistics.pdb
+E:\LTD2-Statistics\ltdstatistics\bin\Debug\ltdstatistics.exe.config
+E:\LTD2-Statistics\ltdstatistics\bin\Debug\ltdstatistics.exe
+E:\LTD2-Statistics\ltdstatistics\bin\Debug\ltdstatistics.pdb
+E:\LTD2-Statistics\ltdstatistics\obj\Debug\ltdstatistics.csprojResolveAssemblyReference.cache
+E:\LTD2-Statistics\ltdstatistics\obj\Debug\ltdstatistics.csproj.ResolveComReference.cache
+E:\LTD2-Statistics\ltdstatistics\obj\Debug\ltdstatistics.csproj.CoreCompileInputs.cache
+E:\LTD2-Statistics\ltdstatistics\obj\Debug\ltdstatistics.exe
+E:\LTD2-Statistics\ltdstatistics\obj\Debug\ltdstatistics.pdb

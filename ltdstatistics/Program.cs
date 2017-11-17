@@ -5,6 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using static System.IO.StreamWriter;
 
+/*
+todo:
+game per hour
+elo
+most loses
+
+
+*/
+
 namespace ltdstatistics
 {
     class Program
@@ -199,27 +208,31 @@ namespace ltdstatistics
                     }
                     string name = tmp_str.Substring(0, tmp_str.IndexOf("("));
                     Boolean gefunden = false;
-                    for (int i = 0; i < winner_names.Length; i++)
-                    {
-                        if (winner_names[i]==name)
-                        {
-                            winner_wins[i]++;
-                            gefunden = true;
-                        }
-                    }
-                    if (!gefunden)
+                    if (allLines[meineZeile] == "Time Elapsed" && match_ergebnis == "LOST" || allLines[meineZeile].Contains("LOST"))
                     {
                         for (int i = 0; i < winner_names.Length; i++)
                         {
-                            if (winner_names[i]==null)
+                            if (winner_names[i] == name)
                             {
-                                winner_names[i] = name;
-                                winner_wins[i] = 1;
-                                i = winner_names.Length;
+                                winner_wins[i]++;
+                                gefunden = true;
                             }
-                            
+                        }
+                        if (!gefunden)
+                        {
+                            for (int i = 0; i < winner_names.Length; i++)
+                            {
+                                if (winner_names[i] == null)
+                                {
+                                    winner_names[i] = name;
+                                    winner_wins[i] = 1;
+                                    i = winner_names.Length;
+                                }
+
+                            }
                         }
                     }
+                    
                     // workers
                     for (int i = 0; i < 2; i++)
                     {
@@ -331,25 +344,28 @@ namespace ltdstatistics
                     }
                     string name = tmp_str.Substring(0, tmp_str.IndexOf("("));
                     Boolean gefunden = false;
-                    for (int i = 0; i < winner_names.Length; i++)
-                    {
-                        if (winner_names[i] == name)
-                        {
-                            winner_wins[i]++;
-                            gefunden = true;
-                        }
-                    }
-                    if (!gefunden)
+                    if (allLines[meineZeile] == "Time Elapsed" && match_ergebnis == "LOST" || allLines[meineZeile].Contains("LOST"))
                     {
                         for (int i = 0; i < winner_names.Length; i++)
                         {
-                            if (winner_names[i] == null)
+                            if (winner_names[i] == name)
                             {
-                                winner_names[i] = name;
-                                winner_wins[i] = 1;
-                                i = winner_names.Length;
+                                winner_wins[i]++;
+                                gefunden = true;
                             }
+                        }
+                        if (!gefunden)
+                        {
+                            for (int i = 0; i < winner_names.Length; i++)
+                            {
+                                if (winner_names[i] == null)
+                                {
+                                    winner_names[i] = name;
+                                    winner_wins[i] = 1;
+                                    i = winner_names.Length;
+                                }
 
+                            }
                         }
                     }
                     // workers
@@ -463,25 +479,28 @@ namespace ltdstatistics
                     }
                     string name = tmp_str.Substring(0, tmp_str.IndexOf("("));
                     Boolean gefunden = false;
-                    for (int i = 0; i < winner_names.Length; i++)
-                    {
-                        if (winner_names[i] == name)
-                        {
-                            winner_wins[i]++;
-                            gefunden = true;
-                        }
-                    }
-                    if (!gefunden)
+                    if (allLines[meineZeile] == "Time Elapsed" && match_ergebnis == "LOST" || allLines[meineZeile].Contains("LOST"))
                     {
                         for (int i = 0; i < winner_names.Length; i++)
                         {
-                            if (winner_names[i] == null)
+                            if (winner_names[i] == name)
                             {
-                                winner_names[i] = name;
-                                winner_wins[i] = 1;
-                                i = winner_names.Length;
+                                winner_wins[i]++;
+                                gefunden = true;
                             }
+                        }
+                        if (!gefunden)
+                        {
+                            for (int i = 0; i < winner_names.Length; i++)
+                            {
+                                if (winner_names[i] == null)
+                                {
+                                    winner_names[i] = name;
+                                    winner_wins[i] = 1;
+                                    i = winner_names.Length;
+                                }
 
+                            }
                         }
                     }
                     // workers
@@ -595,25 +614,28 @@ namespace ltdstatistics
                     }
                     string name = tmp_str.Substring(0, tmp_str.IndexOf("("));
                     Boolean gefunden = false;
-                    for (int i = 0; i < winner_names.Length; i++)
-                    {
-                        if (winner_names[i] == name)
-                        {
-                            winner_wins[i]++;
-                            gefunden = true;
-                        }
-                    }
-                    if (!gefunden)
+                    if (allLines[meineZeile] == "Time Elapsed" && match_ergebnis == "LOST" || allLines[meineZeile].Contains("LOST"))
                     {
                         for (int i = 0; i < winner_names.Length; i++)
                         {
-                            if (winner_names[i] == null)
+                            if (winner_names[i] == name)
                             {
-                                winner_names[i] = name;
-                                winner_wins[i] = 1;
-                                i = winner_names.Length;
+                                winner_wins[i]++;
+                                gefunden = true;
                             }
+                        }
+                        if (!gefunden)
+                        {
+                            for (int i = 0; i < winner_names.Length; i++)
+                            {
+                                if (winner_names[i] == null)
+                                {
+                                    winner_names[i] = name;
+                                    winner_wins[i] = 1;
+                                    i = winner_names.Length;
+                                }
 
+                            }
                         }
                     }
                     // workers
@@ -727,25 +749,28 @@ namespace ltdstatistics
                     }
                     string name = tmp_str.Substring(0, tmp_str.IndexOf("("));
                     Boolean gefunden = false;
-                    for (int i = 0; i < winner_names.Length; i++)
-                    {
-                        if (winner_names[i] == name)
-                        {
-                            winner_wins[i]++;
-                            gefunden = true;
-                        }
-                    }
-                    if (!gefunden)
+                    if (allLines[meineZeile] == "Time Elapsed" && match_ergebnis == "LOST" || allLines[meineZeile].Contains("LOST"))
                     {
                         for (int i = 0; i < winner_names.Length; i++)
                         {
-                            if (winner_names[i] == null)
+                            if (winner_names[i] == name)
                             {
-                                winner_names[i] = name;
-                                winner_wins[i] = 1;
-                                i = winner_names.Length;
+                                winner_wins[i]++;
+                                gefunden = true;
                             }
+                        }
+                        if (!gefunden)
+                        {
+                            for (int i = 0; i < winner_names.Length; i++)
+                            {
+                                if (winner_names[i] == null)
+                                {
+                                    winner_names[i] = name;
+                                    winner_wins[i] = 1;
+                                    i = winner_names.Length;
+                                }
 
+                            }
                         }
                     }
                     // workers
