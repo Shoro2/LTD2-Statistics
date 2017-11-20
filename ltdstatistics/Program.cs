@@ -23,7 +23,7 @@ namespace ltdstatistics
         static void Main(string[] args)
         {
             int meineZeile=0, zeile = 0, customgames = 0, match_level = 0, match_lvl_aktuell=0, total_games = 0, wins_west = 0, wins_east = 0, wins_ele=0, wins_mech=0, wins_grove=0, wins_forsaken=0, wins_mm=0, pick_ele = 0, pick_mech = 0, pick_forsaken = 0, pick_grove = 0, pick_mm = 0;
-            
+            int mmueber = 0, elo=0;
             double matchtime=0.00, avg_matchtime = 0.00, total_matchtime=0.00;
             string mvp="", mvp2="", mvp3="", match_ergebnis = "", match_date = "", match_day = "", match_time="", tmp_str="";
 
@@ -613,6 +613,11 @@ namespace ltdstatistics
                         tmp_str = tmp_str.Substring(1);
                     }
                     string name = tmp_str.Substring(0, tmp_str.IndexOf("("));
+                    if (!line.Contains("Closed"))
+                       {
+                        elo = Int32.Parse(tmp_str.Substring(tmp_str.IndexOf("(") + 1, 4));
+                    }
+                    if (elo > 1500) mmueber++;
                     Boolean gefunden = false;
                     if (allLines[meineZeile] == "Time Elapsed" && match_ergebnis == "LOST" || allLines[meineZeile].Contains("LOST"))
                     {
@@ -1015,6 +1020,7 @@ namespace ltdstatistics
             Console.WriteLine("Most workers: " + topworkers);
             Console.WriteLine("Most income: " + topinc);
             Console.WriteLine("Most value: " + topvalue);
+            Console.WriteLine("mm: " + mmueber);
             Console.ReadLine();
         }
 
