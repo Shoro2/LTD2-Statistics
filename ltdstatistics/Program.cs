@@ -613,11 +613,7 @@ namespace ltdstatistics
                         tmp_str = tmp_str.Substring(1);
                     }
                     string name = tmp_str.Substring(0, tmp_str.IndexOf("("));
-                    if (!line.Contains("Closed"))
-                       {
-                        elo = Int32.Parse(tmp_str.Substring(tmp_str.IndexOf("(") + 1, 4));
-                    }
-                    if (elo > 1500) mmueber++;
+
                     Boolean gefunden = false;
                     if (allLines[meineZeile] == "Time Elapsed" && match_ergebnis == "LOST" || allLines[meineZeile].Contains("LOST"))
                     {
