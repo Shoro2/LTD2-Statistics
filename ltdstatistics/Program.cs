@@ -384,9 +384,7 @@ namespace ltdstatistics
                     {
                         tmp_str = tmp_str.Substring(1);
                     }
-                    if (tmp_str.Substring(1, 1)==" ") grove_w[match_lvl_aktuell] = Convert.ToInt32(tmp_str.Substring(0, 1));
-                    else grove_w[match_lvl_aktuell] = Convert.ToInt32(tmp_str.Substring(0, 2));
-
+                    grove_w[match_lvl_aktuell] = Convert.ToInt32(tmp_str.Substring(0, 1));
                     if (tmp_str.Substring(1, 1) != " ")
                     {
                         grove_w[match_lvl_aktuell] = grove_w[match_lvl_aktuell] * 10 + Convert.ToInt32(tmp_str.Substring(0, 1));
