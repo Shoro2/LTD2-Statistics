@@ -196,11 +196,11 @@ namespace ltdstatistics
                         zeile++;
                     }
                     match_lvl_aktuell = Convert.ToInt32(allLines[zeile].Substring(6));
-                    /*
+                    
                     while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (allLines[meineZeile] != "Time Elapsed"))
                     {
                         meineZeile++;
-                    }*/
+                    }
                     if (allLines[meineZeile].Contains("LOST")) wins_ele++;
                     if (allLines[meineZeile].Contains("Time Elapsed") && match_ergebnis == "LOST") wins_ele++; 
                     pick_ele++;
@@ -384,14 +384,20 @@ namespace ltdstatistics
                     {
                         tmp_str = tmp_str.Substring(1);
                     }
-                    grove_w[match_lvl_aktuell] = Convert.ToInt32(tmp_str.Substring(0, 1));
+                    if (tmp_str.Substring(1, 1)==" ") grove_w[match_lvl_aktuell] = Convert.ToInt32(tmp_str.Substring(0, 1));
+                    else grove_w[match_lvl_aktuell] = Convert.ToInt32(tmp_str.Substring(0, 2));
+
                     if (tmp_str.Substring(1, 1) != " ")
                     {
-                        grove_w[match_lvl_aktuell] = grove_w[match_lvl_aktuell] * 10 + Convert.ToInt32(tmp_str.Substring(1, 1));
+                        grove_w[match_lvl_aktuell] = grove_w[match_lvl_aktuell] * 10 + Convert.ToInt32(tmp_str.Substring(0, 1));
                     }
                     if (grove_w[match_lvl_aktuell] > Convert.ToInt32(topworkers.Substring(0, topworkers.IndexOf("(") - 1))) topworkers = (Convert.ToString(grove_w[match_lvl_aktuell])) + " (" + name + ")";
                     grove_wTotal[match_lvl_aktuell] += grove_w[match_lvl_aktuell];
                     grove_wOnLvl[match_lvl_aktuell]++;
+
+
+
+
                     // income
                     tmp_str = tmp_str.Substring(tmp_str.IndexOf("│") + 1);
                     while (tmp_str.Substring(0, 1) == " ")
@@ -468,8 +474,8 @@ namespace ltdstatistics
                         zeile++;
                     }
                     match_lvl_aktuell = Convert.ToInt32(allLines[zeile].Substring(6));
-                    
-                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (allLines[meineZeile].Contains("Time Elapsed")))
+
+                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (allLines[meineZeile] != "Time Elapsed"))
                     {
                         meineZeile++;
                     }
@@ -604,8 +610,8 @@ namespace ltdstatistics
                         zeile++;
                     }
                     match_lvl_aktuell = Convert.ToInt32(allLines[zeile].Substring(6));
-                    
-                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (allLines[meineZeile].Contains("Time Elapsed")))
+
+                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (allLines[meineZeile] != "Time Elapsed"))
                     {
                         meineZeile++;
                     }
@@ -621,11 +627,6 @@ namespace ltdstatistics
                         tmp_str = tmp_str.Substring(1);
                     }
                     string name = tmp_str.Substring(0, tmp_str.IndexOf("("));
-<<<<<<< HEAD
-                    
-=======
-
->>>>>>> 4a875e938c490ee4254ce0d06122785b6ab8c64b
                     Boolean gefunden = false;
                     if (allLines[meineZeile].Contains("Time Elapsed") && match_ergebnis == "LOST" || allLines[meineZeile].Contains("LOST"))
                     {
@@ -893,19 +894,29 @@ namespace ltdstatistics
 
             avg_matchtime = total_matchtime / total_games;
             int pick_total = pick_ele + pick_forsaken + pick_grove + pick_mech + pick_mm;
-            int[] winner_copy = new int[5000];
-            Array.Copy(winner_wins, winner_copy, 5000);
+            int[] winner_copy = new int[50000];
+            Array.Copy(winner_wins, winner_copy, 50000);
             Array.Sort(winner_copy);
-            int playerint_mostWins = winner_copy[4999];
-            int playerint_second = winner_copy[4998];
-            int playerint_third = winner_copy[4997];
+            string[] winner_names_copy = new string[50000];
+            Array.Copy(winner_names, winner_names_copy, 50000);
+            Array.Sort(winner_copy);
+            int playerint_first = winner_copy[49999];
+            int playerint_second = winner_copy[49998];
+            int playerint_third = winner_copy[49997];
+            string playerstring_first = winner_names_copy[0];
+            string playerstring_second = winner_names_copy[1];
+            string playerstring_third = winner_names_copy[2];
+            /*
             for (int i = 0; i < winner_wins.Length; i++)
             {
-                if (winner_wins[i] == playerint_mostWins) mvp = winner_names[i] + "(" + winner_wins[i] + ")";
-                if (winner_wins[i] == playerint_second) mvp2 = winner_names[i] + "(" + winner_wins[i] + ")";
-                if (winner_wins[i] == playerint_third) mvp3 = winner_names[i] + "(" + winner_wins[i] + ")";
-            }
-            
+                if (winner_wins[i] == playerint_mostWins) mvp = playerstring_first + "(" + winner_wins[i] + ")";
+                if (winner_wins[i] == playerint_second) mvp2 = playerstring_second + "(" + winner_wins[i] + ")";
+                if (winner_wins[i] == playerint_third) mvp3 = playerstring_third + "(" + winner_wins[i] + ")";
+            }*/
+            mvp = playerstring_first + "(" + playerint_first + ")";
+            mvp2 = playerstring_second + "(" + playerint_second + ")";
+            mvp3 = playerstring_third + "(" + playerint_third + ")";
+
             Console.WriteLine(total_games);
             Console.WriteLine(customgames/2);
             Console.WriteLine(pick_total);
