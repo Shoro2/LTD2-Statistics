@@ -197,7 +197,7 @@ namespace ltdstatistics
                     }
                     match_lvl_aktuell = Convert.ToInt32(allLines[zeile].Substring(6));
                     
-                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (allLines[meineZeile] != "Time Elapsed"))
+                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (allLines[meineZeile].Contains("Time Elapsed")))
                     {
                         meineZeile++;
                     }
@@ -387,7 +387,7 @@ namespace ltdstatistics
                     grove_w[match_lvl_aktuell] = Convert.ToInt32(tmp_str.Substring(0, 1));
                     if (tmp_str.Substring(1, 1) != " ")
                     {
-                        grove_w[match_lvl_aktuell] = grove_w[match_lvl_aktuell] * 10 + Convert.ToInt32(tmp_str.Substring(0, 1));
+                        grove_w[match_lvl_aktuell] = grove_w[match_lvl_aktuell] * 10 + Convert.ToInt32(tmp_str.Substring(1, 1));
                     }
                     if (grove_w[match_lvl_aktuell] > Convert.ToInt32(topworkers.Substring(0, topworkers.IndexOf("(") - 1))) topworkers = (Convert.ToString(grove_w[match_lvl_aktuell])) + " (" + name + ")";
                     grove_wTotal[match_lvl_aktuell] += grove_w[match_lvl_aktuell];
@@ -471,9 +471,9 @@ namespace ltdstatistics
                     {
                         zeile++;
                     }
-                    match_lvl_aktuell = Convert.ToInt32(allLines[zeile].Substring(6));
+                    if (allLines[meineZeile].Contains("Wave:")) match_lvl_aktuell = Convert.ToInt32(allLines[zeile].Substring(6));
 
-                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (allLines[meineZeile] != "Time Elapsed"))
+                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && !(allLines[meineZeile].Contains("Time Elapsed")))
                     {
                         meineZeile++;
                     }
@@ -609,7 +609,7 @@ namespace ltdstatistics
                     }
                     match_lvl_aktuell = Convert.ToInt32(allLines[zeile].Substring(6));
 
-                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (allLines[meineZeile] != "Time Elapsed"))
+                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (allLines[meineZeile].Contains("Time Elapsed")))
                     {
                         meineZeile++;
                     }
@@ -888,8 +888,11 @@ namespace ltdstatistics
                     time = true;
                 }
                 line_davor = line;
+                Console.Clear();
+                Console.WriteLine(" >> "+total_games+" <<");
             }
-
+            Console.Clear();
+            Console.WriteLine("Finished analyzing " + total_games + " games.");
             avg_matchtime = total_matchtime / total_games;
             int pick_total = pick_ele + pick_forsaken + pick_grove + pick_mech + pick_mm;
             int[] winner_copy = new int[50000];
