@@ -621,7 +621,11 @@ namespace ltdstatistics
                         tmp_str = tmp_str.Substring(1);
                     }
                     string name = tmp_str.Substring(0, tmp_str.IndexOf("("));
+<<<<<<< HEAD
                     
+=======
+
+>>>>>>> 4a875e938c490ee4254ce0d06122785b6ab8c64b
                     Boolean gefunden = false;
                     if (allLines[meineZeile].Contains("Time Elapsed") && match_ergebnis == "LOST" || allLines[meineZeile].Contains("LOST"))
                     {
