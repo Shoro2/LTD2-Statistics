@@ -1,0 +1,7 @@
+E:\LTD2-Statistics\ltdstatistics\bin\x64\Debug\ltdstatistics.exe.config
+E:\LTD2-Statistics\ltdstatistics\bin\x64\Debug\ltdstatistics.exe
+E:\LTD2-Statistics\ltdstatistics\bin\x64\Debug\ltdstatistics.pdb
+E:\LTD2-Statistics\ltdstatistics\obj\x64\Debug\ltdstatistics.csproj.ResolveComReference.cache
+E:\LTD2-Statistics\ltdstatistics\obj\x64\Debug\ltdstatistics.csproj.CoreCompileInputs.cache
+E:\LTD2-Statistics\ltdstatistics\obj\x64\Debug\ltdstatistics.exe
+E:\LTD2-Statistics\ltdstatistics\obj\x64\Debug\ltdstatistics.pdb
