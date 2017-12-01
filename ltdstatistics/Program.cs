@@ -609,7 +609,7 @@ namespace ltdstatistics
                     }
                     match_lvl_aktuell = Convert.ToInt32(allLines[zeile].Substring(6));
 
-                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (allLines[meineZeile].Contains("Time Elapsed")))
+                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && !(allLines[meineZeile].Contains("Time Elapsed")))
                     {
                         meineZeile++;
                     }
