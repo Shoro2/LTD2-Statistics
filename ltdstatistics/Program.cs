@@ -115,13 +115,13 @@ namespace ltdstatistics
             Boolean time = false, custom = false;
             Boolean inZeit = false;
             
-            System.IO.StreamReader fileZ = new System.IO.StreamReader(@"log.txt");
-            System.IO.StreamReader file = new System.IO.StreamReader(@"log.txt");
+            
             string line, line_davor="";
             string[] allLines = new string[500000];
             int meinCounter = 0;
             string target_day = Console.ReadLine();
-
+            System.IO.StreamReader fileZ = new System.IO.StreamReader(@"Logs\"+target_day+".txt");
+            System.IO.StreamReader file = new System.IO.StreamReader(@"Logs\" + target_day + ".txt");
             while ((line = fileZ.ReadLine()) != null)
             {
                 allLines[meinCounter] = line;
@@ -130,6 +130,7 @@ namespace ltdstatistics
             
             while ((line = file.ReadLine()) != null)
             {
+                inZeit = true; 
                 if (line.Contains(target_day)) inZeit = true;
                 if (line.Contains("(Practice/Custom)"))
                 {
@@ -197,7 +198,7 @@ namespace ltdstatistics
                     }
                     match_lvl_aktuell = Convert.ToInt32(allLines[zeile].Substring(6));
                     
-                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (allLines[meineZeile].Contains("Time Elapsed")))
+                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (!allLines[meineZeile].Contains("Time Elapsed")))
                     {
                         meineZeile++;
                     }
@@ -326,20 +327,20 @@ namespace ltdstatistics
                         if (line == allLines[i]) zeile = i;
                         meineZeile = zeile;
                     }
-                    
-
-                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && !(allLines[meineZeile].Contains("Time Elapsed")))
-                    {
-                        meineZeile++;
-                    }
-                    if (allLines[meineZeile].Contains("LOST")) wins_grove++;
-                    if (allLines[meineZeile].Contains("Time Elapsed") && match_ergebnis == "LOST") wins_grove++;
                     // gehe zu wave
                     while (!allLines[zeile].Contains("Wave:"))
                     {
                         zeile++;
                     }
-                    if (allLines[meineZeile].Contains("Wave:")) match_lvl_aktuell = Convert.ToInt32(allLines[zeile].Substring(6));
+                    match_lvl_aktuell = Convert.ToInt32(allLines[zeile].Substring(6));
+
+                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (!allLines[meineZeile].Contains("Time Elapsed")))
+                    {
+                        meineZeile++;
+                    }
+                    if (allLines[meineZeile].Contains("LOST")) wins_grove++;
+                    if (allLines[meineZeile].Contains("Time Elapsed") && match_ergebnis == "LOST") wins_grove++;
+
                     pick_grove++;
                     tmp_str = line;
                     // name
@@ -392,10 +393,6 @@ namespace ltdstatistics
                     if (grove_w[match_lvl_aktuell] > Convert.ToInt32(topworkers.Substring(0, topworkers.IndexOf("(") - 1))) topworkers = (Convert.ToString(grove_w[match_lvl_aktuell])) + " (" + name + ")";
                     grove_wTotal[match_lvl_aktuell] += grove_w[match_lvl_aktuell];
                     grove_wOnLvl[match_lvl_aktuell]++;
-
-
-
-
                     // income
                     tmp_str = tmp_str.Substring(tmp_str.IndexOf("│") + 1);
                     while (tmp_str.Substring(0, 1) == " ")
@@ -457,7 +454,7 @@ namespace ltdstatistics
                     grove_leakTotal[match_lvl_aktuell] += grove_leak[match_lvl_aktuell];
                     grove_leakOnLvl[match_lvl_aktuell]++;
                 }
-                // mech
+                //mech
                 if (line.Contains("Mech") && custom == false && inZeit == true && line.Contains("(") && !line.Contains("Most") && !line.Contains("Fewest"))
                 {
                     //gehe zur aktuellen Zeile
@@ -467,19 +464,19 @@ namespace ltdstatistics
                         meineZeile = zeile;
                     }
                     // gehe zu wave
-                    while (!allLines[zeile].Contains("Wave"))
+                    while (!allLines[zeile].Contains("Wave:"))
                     {
                         zeile++;
                     }
-                    if (allLines[meineZeile].Contains("Wave:")) match_lvl_aktuell = Convert.ToInt32(allLines[zeile].Substring(6));
+                    match_lvl_aktuell = Convert.ToInt32(allLines[zeile].Substring(6));
 
-                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && !(allLines[meineZeile].Contains("Time Elapsed")))
+                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (!allLines[meineZeile].Contains("Time Elapsed")))
                     {
                         meineZeile++;
                     }
                     if (allLines[meineZeile].Contains("LOST")) wins_mech++;
                     if (allLines[meineZeile].Contains("Time Elapsed") && match_ergebnis == "LOST") wins_mech++;
-                    
+
                     pick_mech++;
                     tmp_str = line;
                     // name
@@ -609,7 +606,11 @@ namespace ltdstatistics
                     }
                     match_lvl_aktuell = Convert.ToInt32(allLines[zeile].Substring(6));
 
+<<<<<<< HEAD
                     while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && !(allLines[meineZeile].Contains("Time Elapsed")))
+=======
+                    while ((!allLines[meineZeile].Contains("LOST")) && (!allLines[meineZeile].Contains("WON")) && (!allLines[meineZeile].Contains("Time Elapsed")))
+>>>>>>> b101ca890b61d69855529067944828855517576d
                     {
                         meineZeile++;
                     }
